@@ -1,6 +1,4 @@
-import os
-
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +14,8 @@ html_content = """<!DOCTYPE html>
         }
 
         body {
-            background: url('https://i.stardots.io/xyqing/StarDots-2026061822283063843.jpg') no-repeat center center fixed;
+            /* 这里已经帮你加上了免费代理前缀，彻底解决 403 禁止访问的问题 */
+            background: url('https://images.weserv.nl/?url=i.stardots.io/xyqing/StarDots-2026061822283063843.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'ZCOOL HuangYou', "Microsoft YaHei", sans-serif;
             color: #fff;
@@ -25,11 +24,11 @@ html_content = """<!DOCTYPE html>
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            padding: 40px 20px;
+            padding: 20px 20px 40px 20px;
             overflow-x: hidden;
         }
 
-        /* 移除毛玻璃，直接全透明，通过强烈的文字阴影和黑色描边确保文字在任何背景下都极其清晰、霸气 */
+        /* 零遮挡容器 */
         .container {
             width: 100%;
             max-width: 1000px;
@@ -37,7 +36,19 @@ html_content = """<!DOCTYPE html>
             padding: 20px;
         }
 
-        /* 顶部标题：少羽牛逼 - 极其狂放霸气的火焰与霓虹复合阴影 */
+        /* 顶部白色不知名神秘字符 */
+        .unknown-code {
+            font-family: 'Courier New', Courier, monospace, sans-serif;
+            font-size: 1.1rem;
+            color: #ffffff;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            opacity: 0.85;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        /* 头部标题：少羽牛逼 */
         h1 {
             font-size: 5rem;
             font-weight: 900;
@@ -62,7 +73,7 @@ html_content = """<!DOCTYPE html>
             width: 100%;
         }
 
-        /* 信仰宣言段落 - 巨型艺术字排版 */
+        /* 信仰宣言段落 */
         .declaration {
             font-size: 2.2rem;
             line-height: 1.6;
@@ -131,7 +142,7 @@ html_content = """<!DOCTYPE html>
             animation: shake 0.5s infinite alternate;
         }
 
-        /* 重点单字极致放大爆破效果 */
+        /* 重点单字放大幅度 */
         .em-shao, .em-yu {
             font-size: 3.5rem;
             color: #ff0055;
@@ -140,13 +151,13 @@ html_content = """<!DOCTYPE html>
             vertical-align: middle;
         }
 
-        /* 呼吸灯特效 */
+        /* 呼吸扩张特效 */
         @keyframes pulse {
             0% { transform: scale(1); text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 3px 3px 0px #000; }
-            100% { transform: scale(1.03); text-shadow: 0 0 20px #ff00bb, 0 0 40px #ff00bb, 3px 3px 0px #000; }
+            100% { transform: scale(1.05); text-shadow: 0 0 20px #ff00bb, 0 0 40px #ff00bb, 3px 3px 0px #000; }
         }
 
-        /* 震动特效，增加狂暴感 */
+        /* 震动特效 */
         @keyframes shake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             100% { transform: translate(-1px, -1px) rotate(0.5deg); }
@@ -156,16 +167,17 @@ html_content = """<!DOCTYPE html>
 <body>
 
     <div class="container">
-        <!-- 顶部的无敌标题 -->
+        <div class="unknown-code">
+            // STATUS: OVERLOADED // SYS_DATA_ID: Ø928_X77 // ▣▢▣▩▩◈
+        </div>
+
         <h1>少羽牛逼</h1>
         
         <div class="content">
-            <!-- 信仰段落 -->
             <p class="declaration">
                 <span class="em-shao">少</span>字开头，<span class="em-yu">羽</span>字结尾，一个他，撑起了我的整个青春！他，是我一辈子的信仰❣️少羽这两个字看起来太独特，你若折他一根翅膀👊我必毁你整个天堂👎风雨难改我初心，只为记住羽家名，羽家🧡永存！用最初的心陪少羽走最远的路OK 少羽牛逼！
             </p>
             
-            <!-- 巅峰史诗战绩 -->
             <div class="timeline-box">
                 <div class="timeline-title">少羽巅峰时期</div>
                 <div class="timeline-grid">
@@ -179,7 +191,6 @@ html_content = """<!DOCTYPE html>
                 </div>
             </div>
             
-            <!-- 绝杀结尾 -->
             <div class="footer-shout">
                 少羽无浮无牧666
             </div>
@@ -187,10 +198,4 @@ html_content = """<!DOCTYPE html>
     </div>
 
 </body>
-</html>"""
-
-with open("shaoyu_max_power.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print("SUCCESS")
-
+</html>
